@@ -1,0 +1,416 @@
+:root {
+    --left-right-space: 6px;
+    --top-bottom-space: 8px;
+    --color-transparent: 0%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(124deg, #6D2E2E, #2C1818);
+}
+
+.PatternLayer {
+    width: 100%;
+    height: 100%;
+    background-image: url("IEEE-CS-PATTERN.png");
+    background-size: cover;
+    opacity: 3%;
+}
+
+.logo {
+    position: absolute;
+    width: 25%;
+    height: 40vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: logoLoader 1s linear 2.5s 1 normal forwards;
+    animation-play-state: running;
+}
+
+@keyframes logoLoader {
+
+    0% {
+        visibility: visible;
+
+    }
+
+    90% {
+        opacity: 10%;
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0%;
+        transform: scale3d(6, 6, 6);
+        display: none;
+    }
+}
+
+.logo--E {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: 0;
+    left: 0;
+}
+
+.logo--E--leftColumn,
+.logo--E--middleColumn,
+.logo--E--rightColumn,
+.logo--E--base {
+    position: absolute;
+    background-color: hsl(41, 52%, 68%, var(--color-transparent));
+}
+
+.logo--E--leftColumn {
+    width: 12%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.logo--E--leftColumn::before,
+.logo--E--middleColumn::before,
+.logo--E--rightColumn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: hsl(41, 52%, 68%, 100%);
+    animation: E-letterColumns .3s ease-in-out .3s 1 normal forwards;
+    bottom: 0;
+}
+
+@keyframes E-letterColumns {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.logo--E--middleColumn {
+    width: 12%;
+    height: calc(100% - 22.259%);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo--E--rightColumn {
+    width: 12%;
+    height: 100%;
+    right: 0;
+}
+
+.logo--E--base {
+    width: calc(100% - 12% * 2);
+    height: 22.259%;
+    bottom: 0;
+    left: 12%;
+}
+
+/*I and E letterBase*/
+.logo--E--base::before,
+.logo--E--base::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: hsl(41, 52%, 68%, 100%);
+    top: 0;
+    animation: I-letter-E-letterBase .3s ease-in-out 0s 1 normal forwards;
+    animation-play-state: running;
+}
+
+.logo--E--base::before {
+    right: 50%;
+}
+
+.logo--E--base::after {
+    left: 50%;
+}
+
+@keyframes I-letter-E-letterBase {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: calc((100% + 15.788% * 2) / 2);
+    }
+}
+
+.logo--C {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 30%);
+    left: 0;
+    top: 30%;
+}
+
+.logo--C--leftColumn,
+.logo--C--rightColumn {
+    position: absolute;
+    width: 12%;
+    height: 100%;
+    background-color: hsl(41, 52%, 68%, var(--color-transparent));
+    top: 0;
+}
+
+.logo--C--leftColumn::before,
+.logo--C--rightColumn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: hsl(41, 52%, 68%, 100%);
+    top: 0;
+    animation: C-letterColumns .3s ease-in-out .6s 1 normal forwards;
+}
+
+@keyframes C-letterColumns {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.logo--C--leftColumn {
+    left: 0;
+}
+
+.logo--C--rightColumn {
+    right: 0;
+}
+
+.logo--S {
+    position: absolute;
+    width: calc(100% - 12% * 2 - var(--left-right-space)*2);
+    height: calc(100% - 30% - var(--top-bottom-space));
+    left: calc(12% + var(--left-right-space));
+    top: calc(30% + var(--top-bottom-space));
+}
+
+.logo--S--leftColumn,
+.logo--S--middleColumn,
+.logo--S--rightColumn {
+    position: absolute;
+    width: 16.704%;
+    height: 100%;
+    background-color: hsl(37, 96%, 54%, var(--color-transparent));
+    top: 0;
+}
+
+.logo--S--leftColumn::before,
+.logo--S--rightColumn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: hsl(37, 96%, 54%);
+}
+
+.logo--S--middleColumn::before,
+.logo--S--middleColumn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: hsl(37, 96%, 54%);
+    animation: S-letterMiddleColumn .3s ease-in-out 1.5s 1 normal forwards;
+    animation-play-state: running;
+}
+
+.logo--S--leftColumn::before {
+    top: 0;
+    animation: S-letterColumns .3s ease-in-out .9s 1 normal forwards;
+    animation-play-state: running;
+}
+
+.logo--S--middleColumn::before {
+    bottom: 0;
+}
+
+.logo--S--middleColumn::after {
+    top: 0;
+}
+
+.logo--S--rightColumn::before {
+    animation: S-letterColumns .3s ease-in-out .9s 1 normal forwards;
+    animation-play-state: running;
+    bottom: 0;
+}
+
+@keyframes S-letterColumns {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes S-letterMiddleColumn {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 50%;
+    }
+}
+
+.logo--S--leftColumn {
+    left: 0;
+}
+
+.logo--S--middleColumn {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo--S--rightColumn {
+    right: 0;
+}
+
+.logo--S--firstRow,
+.logo--S--secondRow {
+    position: absolute;
+    width: calc((100% - (16.704% * 3)) / 2);
+    height: 10.984%;
+    background-color: hsl(37, 96%, 54%, var(--color-transparent));
+}
+
+.logo--S--firstRow {
+    bottom: 0;
+    left: 16.704%;
+}
+
+.logo--S--secondRow {
+    top: 0;
+    right: 16.704%;
+}
+
+.logo--S--firstRow::before,
+.logo--S--secondRow::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: hsl(37, 96%, 54%);
+    animation: S-letterRows .3s ease-in-out 1.2s 1 normal forwards;
+    animation-play-state: running;
+}
+
+.logo--S--firstRow::before {
+    left: 0;
+}
+
+.logo--S--secondRow::before {
+    right: 0;
+}
+
+@keyframes S-letterRows {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: calc(100% + 66.986%);
+    }
+}
+
+.logo--eyes {
+    position: absolute;
+    width: calc(100% - 12% * 2);
+    height: calc(30%);
+    top: 0;
+    left: calc(12%);
+}
+
+.logo--eyes--leftEye,
+.logo--eyes--rightEye {
+    position: absolute;
+    width: calc(50% - 15.7885% / 2 - var(--left-right-space)*2);
+    height: calc(100% - 21.4277% - var(--top-bottom-space));
+    background-color: hsl(207, 48%, 54%, var(--color-transparent));
+    top: 0;
+}
+
+.logo--eyes--leftEye {
+    left: var(--left-right-space);
+}
+
+.logo--eyes--rightEye {
+    right: var(--left-right-space);
+}
+
+.logo--eyes--leftEye::before,
+.logo--eyes--rightEye::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: hsl(207, 48%, 54%, 100%);
+    bottom: 0;
+    animation: Eyes .3s ease-in-out 1.8s 1 normal forwards;
+    z-index: -1;
+}
+
+@keyframes Eyes {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+/* .logo--eyes--leftEye--pupil,
+.logo--eyes--rightEye--pupil {
+    position: absolute;
+    width: 8%;
+    height: 40%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1px;
+} */
+
+.logo--eyes--leftEye--pupil,
+.logo--eyes--rightEye--pupil {
+    position: absolute;
+    width: 8%;
+    height: 40%;
+    background: linear-gradient(60deg, #6D2E2E, #2C1818);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1px;
+    opacity: 0;
+    animation: pupil .3s 1.8s forwards;
+}
+
+@keyframes pupil {
+    0% {}
+
+    100% {
+        opacity: 1;
+    }
+}
